@@ -14,11 +14,14 @@ M.base46 = {
 	-- },
 }
 
--- M.nvdash = { load_on_startup = true }
+M.nvdash = { load_on_startup = true }
 -- M.ui = {
 --       tabufline = {
 --          lazyload = false
 --      }
 -- }
+
+vim.opt.number = true         -- absolute line numbers
+vim.opt.relativenumber = true -- relativenumber
 
 return M

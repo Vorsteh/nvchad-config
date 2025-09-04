@@ -1,7 +1,7 @@
 return {
   {
     "stevearc/conform.nvim",
-    -- event = 'BufWritePre', -- uncomment for format on save
+    event = 'BufWritePre', -- uncomment for format on save
     opts = require "configs.conform",
   },
 
@@ -10,6 +10,12 @@ return {
     "neovim/nvim-lspconfig",
     config = function()
       require "configs.lspconfig"
+      local lspconfig = require("lspconfig")
+      lspconfig.clangd.setup({
+        cmd = { "clangd" },  -- make sure clangd is installed
+        filetypes = { "c", "cpp", "objc", "objcpp" },
+        root_dir = lspconfig.util.root_pattern("compile_commands.json", ".git"),
+      })
     end,
   },
 

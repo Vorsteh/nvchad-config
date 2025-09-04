@@ -1,0 +1,17 @@
+# Ignore plugin directories
+plugin/
+pack/
+site/
+lazy-lock.json
+session/
+shada/
+
+# Ignore temporary files
+*.swp
+*.swo
+*.tmp
+*.bak
+
+# NvChad specific
+lua/custom/backups/
+
